@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="fondo" opacity="0.93" prefHeight="849.0" prefWidth="1086.0" stylesheets="@estilo.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Pizzeria.FXMLDocumentController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0d0c0c" height="119.0" stroke="BLACK" strokeType="INSIDE" width="1086.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff9d9d" height="699.0" layoutX="16.0" layoutY="128.0" opacity="0.76" stroke="BLACK" strokeType="INSIDE" width="428.0">
+         <effect>
+            <BoxBlur />
+         </effect></Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff9d9d" height="292.0" layoutX="463.0" layoutY="129.0" opacity="0.76" stroke="BLACK" strokeType="INSIDE" width="615.0">
+         <effect>
+            <BoxBlur />
+         </effect>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff9d9d" height="400.0" layoutX="461.0" layoutY="427.0" opacity="0.76" stroke="BLACK" strokeType="INSIDE" width="615.0">
+         <effect>
+            <BoxBlur />
+         </effect>
+      </Rectangle>
+      <ImageView fitHeight="119.0" fitWidth="150.0">
+         <image>
+            <Image url="@../../../../../Pictures/images.jpg" />
+         </image>
+      </ImageView>
+      <RadioButton fx:id="botonMasaIntegral" layoutX="223.0" layoutY="177.0" mnemonicParsing="false" onAction="#elaborarPizza" prefHeight="32.0" prefWidth="122.0" text="INTEGRAL" textFill="#7f0a0a">
+         <font>
+            <Font name="Calibri Italic" size="19.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="masas" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="botonMasaNormal" layoutX="63.0" layoutY="180.0" mnemonicParsing="false" onAction="#elaborarPizza" prefHeight="25.0" prefWidth="122.0" text="NORMAL" textFill="#7f0a0a" toggleGroup="$masas">
+         <font>
+            <Font name="Calibri Italic" size="18.0" />
+         </font>
+      </RadioButton>
+      <ComboBox fx:id="boxTiposPizza" layoutX="64.0" layoutY="283.0" onAction="#elaborarPizza" prefWidth="150.0" />
+      <ListView fx:id="listaIngredientesExtra" layoutX="67.0" layoutY="386.0" onMouseClicked="#recogerDatosList" prefHeight="163.0" prefWidth="198.0" />
+      <Spinner fx:id="SpinnerTamaño" layoutX="60.0" layoutY="610.0" onMouseClicked="#recogerDatosList" />
+      <Text fill="#752525" layoutX="64.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MASA" textAlignment="CENTER" wrappingWidth="53.99999314546585">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="#752525" layoutX="62.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TIPO" textAlignment="CENTER" wrappingWidth="72.00001347064972">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="#752525" layoutX="63.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INGREDIENTES EXTRA" textAlignment="CENTER" wrappingWidth="186.00001347064972">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="#752525" layoutX="64.0" layoutY="575.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TAMAÑO" textAlignment="CENTER" wrappingWidth="84.00001347064972">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="#7f0a0a" layoutX="879.0" layoutY="557.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PRECIO" textAlignment="CENTER" wrappingWidth="206.99999716877937">
+         <font>
+            <Font name="Calibri Bold Italic" size="49.0" />
+         </font>
+      </Text>
+      <Text fill="#752525" layoutX="476.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PIZZA ELABORADA:" textAlignment="CENTER" wrappingWidth="191.99999523162842">
+         <font>
+            <Font name="Calibri Bold" size="23.0" />
+         </font>
+      </Text>
+      <Label fx:id="textoPrecioPizza" alignment="CENTER" layoutX="915.0" layoutY="582.0" prefHeight="56.0" prefWidth="136.0" textAlignment="CENTER" textFill="#7f0a0a">
+         <font>
+            <Font name="System Bold Italic" size="39.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="pedidoResumen" layoutX="491.0" layoutY="487.0" prefHeight="211.0" prefWidth="399.0">
+         <font>
+            <Font name="Calibri Italic" size="20.0" />
+         </font></TextArea>
+      <Text fill="#752525" layoutX="30.0" layoutY="659.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BEBIDA" textAlignment="CENTER" wrappingWidth="135.99999653548002">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </Text>
+      <CheckBox fx:id="checkBoxBebida" layoutX="64.0" layoutY="685.0" mnemonicParsing="false" onAction="#elaborarPizza" prefHeight="8.0" prefWidth="168.0" text="INCLUIR BEBIDA" textFill="#7f0a0a">
+         <font>
+            <Font name="Calibri Italic" size="18.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="checkBoxGratinar" layoutX="259.0" layoutY="283.0" mnemonicParsing="false" onAction="#elaborarPizza" prefHeight="25.0" prefWidth="136.0" text="GRATINAR" textFill="#7f0a0a">
+         <font>
+            <Font name="Calibri Italic" size="18.0" />
+         </font>
+      </CheckBox>
+      <Button id="botonAñadir" fx:id="botonAñadirPizzaPedido" layoutX="647.0" layoutY="724.0" mnemonicParsing="false" onAction="#añadirPizzaPedido" prefHeight="49.0" prefWidth="247.0" text="AÑADIR PIZZA AL PEDIDO">
+         <font>
+            <Font name="Calibri Bold Italic" size="20.0" />
+         </font>
+      </Button>
+      <Text fill="#752525" layoutX="476.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RESUMEN PEDIDO:" textAlignment="CENTER" wrappingWidth="233.99999523162842">
+         <font>
+            <Font name="Calibri Bold" size="23.0" />
+         </font>
+      </Text>
+      <ListView fx:id="listViewPizzas" layoutX="483.0" layoutY="173.0" prefHeight="157.0" prefWidth="372.0" />
+      <Line endX="416.0" layoutX="585.0" layoutY="340.0" opacity="0.22" startX="-100.0" />
+      <Line endX="221.0" layoutX="154.0" layoutY="749.0" opacity="0.23" startX="-100.0" />
+      <Text fill="#7f0a0a" layoutX="554.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL" textAlignment="CENTER" wrappingWidth="148.99999624490738">
+         <font>
+            <Font name="Calibri Bold Italic" size="49.0" />
+         </font>
+      </Text>
+      <Label fx:id="textoPrecioTotal" alignment="CENTER" layoutX="743.0" layoutY="345.0" prefHeight="56.0" prefWidth="136.0" textAlignment="CENTER" textFill="#7f0a0a">
+         <font>
+            <Font name="System Bold Italic" size="39.0" />
+         </font>
+      </Label>
+      <Text fill="WHITE" layoutX="166.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREA TU PIZZA" textAlignment="CENTER" wrappingWidth="246.99999278783798">
+         <font>
+            <Font name="Calibri Bold Italic" size="36.0" />
+         </font>
+      </Text>
+      <Text fill="#900707" layoutX="85.0" layoutY="798.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PIZZA :" textAlignment="CENTER" wrappingWidth="109.0000010728836">
+         <font>
+            <Font name="Calibri Bold Italic" size="36.0" />
+         </font>
+      </Text>
+      <Label fx:id="numerodePizza" alignment="CENTER" layoutX="219.0" layoutY="759.0" prefHeight="20.0" prefWidth="61.0" text="1" textAlignment="CENTER" textFill="#7f0a0a">
+         <font>
+            <Font name="System Bold Italic" size="39.0" />
+         </font>
+      </Label>
+      <Text fill="#7f0a0a" layoutX="869.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿ Cuantas pizzas tengo?" wrappingWidth="206.99999716877937">
+         <font>
+            <Font name="Calibri Bold Italic" size="24.0" />
+         </font>
+      </Text>
+      <Label fx:id="numeroPizzaPedido" alignment="CENTER" layoutX="929.0" layoutY="255.0" prefHeight="20.0" prefWidth="61.0" text="0" textAlignment="CENTER" textFill="#7f0a0a">
+         <font>
+            <Font name="System Bold Italic" size="39.0" />
+         </font>
+      </Label>
+   </children>
+   <effect>
+      <DropShadow blurType="TWO_PASS_BOX" />
+   </effect>
+</AnchorPane>
